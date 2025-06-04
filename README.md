@@ -106,10 +106,10 @@ To use Google Fonts, import them in your HTML head section and reference them in
 </typewriter-effect>
 ```
 
-### Monospace Style
+### Bold Dark Text
 ```html
 <typewriter-effect 
-    phrases='["Code style text", "Perfect for tech sites", "Monospace is cool"]'
+    phrases='["Code style text", "Perfect for tech sites", "Developer approved"]'
     color="#2d3748"
     font-weight="bold">
 </typewriter-effect>
