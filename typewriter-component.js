@@ -25,8 +25,8 @@ class TypewriterEffect extends HTMLElement {
     render() {
         const fontSize = this.getAttribute('font-size') || '3rem';
         const color = this.getAttribute('color') || '#333333';
-        const fontFamily = this.getAttribute('font-family') || '"Special Elite", "Courier New", monospace';
-        const fontWeight = this.getAttribute('font-weight') || '600';
+        const fontFamily = this.getAttribute('font-family') || '"Courier New", monospace';
+        const fontWeight = this.getAttribute('font-weight') || 'normal';
         const cursorColor = this.getAttribute('cursor-color') || color;
         
         this.shadowRoot.innerHTML = `
@@ -57,7 +57,7 @@ class TypewriterEffect extends HTMLElement {
     }
     
     initTypewriter() {
-        // parse phrases
+        // Parse phrases
         const phrasesAttr = this.getAttribute('phrases');
         try {
             this.phrases = phrasesAttr ? JSON.parse(phrasesAttr) : ['Hello World!'];
@@ -65,11 +65,11 @@ class TypewriterEffect extends HTMLElement {
             this.phrases = ['Hello World!'];
         }
         
-        // get elements
+        // Get elements
         this.textDisplay = this.shadowRoot.getElementById('text');
         this.cursor = this.shadowRoot.querySelector('.cursor');
         
-        // state variables
+        // State variables - exactly like original
         this.currentPhrase = [];
         this.i = 0;
         this.j = 0;
@@ -77,7 +77,7 @@ class TypewriterEffect extends HTMLElement {
         this.isEnd = false;
         this.cursorVisible = true;
         
-        // cursor animation setup
+        // Cursor animation setup - exactly like original
         const animateCursor = () => {
             this.cursorVisible = !this.cursorVisible;
             this.cursor.style.opacity = this.cursorVisible ? "1" : "0";
@@ -86,7 +86,7 @@ class TypewriterEffect extends HTMLElement {
         this.cursorInterval = setInterval(animateCursor, 400);
         this.cursor.style.transition = "all 0.15s ease";
         
-        // start typewriter
+        // Start typewriter
         this.loopThroughPhrases();
     }
     
@@ -100,7 +100,7 @@ class TypewriterEffect extends HTMLElement {
                 this.j++;
                 this.textDisplay.innerHTML = this.currentPhrase.join("");
 
-                // make cursor visible during typing
+                // Make cursor visible during typing
                 this.cursor.style.opacity = "1";
             }
 
@@ -111,13 +111,13 @@ class TypewriterEffect extends HTMLElement {
                 this.textDisplay.innerHTML = this.currentPhrase.join("");
             }
 
-            // end of phrase reached
+            // End of phrase reached
             if (this.j == this.phrases[this.i].length) {
                 this.isEnd = true;
                 this.isDeleting = true;
             }
 
-            // all characters deleted
+            // All characters deleted
             if (this.isDeleting && this.j === 0) {
                 this.currentPhrase = [];
                 this.isDeleting = false;
@@ -129,7 +129,7 @@ class TypewriterEffect extends HTMLElement {
             }
         }
 
-        // timing control 
+        // Timing control - EXACTLY like original
         const spedUp = Math.random() * 150;
         const normalSpeed = Math.random() * 300;
         const time = this.isEnd ? 2000 : this.isDeleting ? spedUp : normalSpeed;
