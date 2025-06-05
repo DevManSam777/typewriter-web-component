@@ -159,4 +159,4 @@ Works in all modern browsers that support:
 ## License
 [LICENSE](LICENSE)  
 
-Copyright (c) 2025 Samir Shuman
+Copyright (c) 2025 DevManSam
