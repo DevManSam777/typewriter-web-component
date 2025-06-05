@@ -157,7 +157,6 @@ Works in all modern browsers that support:
 - Component is fully self-contained and won't conflict with existing styles
 
 ## License
+[LICENSE](LICENSE)  
 
 Copyright (c) 2025 Samir Shuman
-
-This project is free to use and modify. Feel free to adapt it for your own purposes.
