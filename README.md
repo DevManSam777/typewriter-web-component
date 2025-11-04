@@ -19,7 +19,7 @@ A reusable web component that creates a classic typewriter effect with customiza
 Include the component in your html head section directly from the CDN:
 
 ```html
-<script src="https://raw.githack.com/DevManSam777/typewriter-web-component/main/typewriter-component.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/DevManSam777/typewriter-web-component@main/typewriter-component.js"></script>
 ```
 
 ## Usage
