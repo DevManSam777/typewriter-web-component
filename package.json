@@ -1,0 +1,33 @@
+{
+  "name": "@devmansam/type-writer-effect",
+  "version": "1.0.0",
+  "description": "A lightweight, responsive, customizable, typewriter effect web component",
+  "main": "typewriter-component.js",
+  "type": "module",
+  "files": [
+    "typewriter-component.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"No tests specified yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevManSam777/typewriter-web-component.git"
+  },
+  "keywords": [
+    "web-component",
+    "custom-element",
+    "typewriter",
+    "typewriter-effect",
+    "ui-component",
+    "lightweight"
+  ],
+  "author": "DevManSam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevManSam777/typewriter-web-component/issues"
+  },
+  "homepage": "https://github.com/DevManSam777/typewriter-web-component#readme"
+}

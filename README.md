@@ -1,7 +1,7 @@
 # Typewriter Web Component
 
-![Typewriter effect demo](./typewriter.gif)  
-  
+![Typewriter effect demo](./typewriter.gif)
+
 A reusable web component that creates a classic typewriter effect with customizable styling. The component displays phrases character by character, simulating the look and feel of an old typewriter, then deletes the text before displaying the next phrase.
 
 ## Features
@@ -16,10 +16,47 @@ A reusable web component that creates a classic typewriter effect with customiza
 
 ## Installation
 
-Include the component in your html head section directly from the CDN:
+### Option 1: CDN (No build tools required)
+
+The simplest way. Just add this script tag to your HTML:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/DevManSam777/typewriter-web-component@main/typewriter-component.js"></script>
+```
+
+### Option 2: npm with a bundler (Vite, Webpack, Parcel, etc.)
+
+If you're using a build tool:
+
+```bash
+npm install @devmansam/type-writer-effect
+```
+
+Then import in your JavaScript:
+
+```javascript
+import '@devmansam/type-writer-effect';
+```
+
+Add to your HTML:
+
+```html
+<typewriter-effect phrases='["Hello World!"]'></typewriter-effect>
+```
+
+### Option 3: npm without a bundler
+
+If you installed via npm but aren't using a bundler, you need to use the full path:
+
+```html
+<script type="module" src="./main.js"></script>
+<typewriter-effect phrases='["Hello World!"]'></typewriter-effect>
+```
+
+In main.js:
+
+```javascript
+import './node_modules/@devmansam/type-writer-effect/typewriter-component.js';
 ```
 
 ## Usage
@@ -27,25 +64,35 @@ Include the component in your html head section directly from the CDN:
 ### Basic Usage
 
 ```html
-<typewriter-effect phrases='["Hello World!", "Welcome!", "Enjoy the effect!"]'></typewriter-effect>
+<typewriter-effect
+  phrases='["Hello World!", "Welcome!", "Enjoy the effect!"]'
+></typewriter-effect>
 ```
 
 ### Custom Styling
 
 ```html
-<typewriter-effect 
-    phrases='["Custom text!", "Any color!", "Any size!"]'
-    font-size="2rem"
-    color="#e74c3c"
-    font-family="Courier New, monospace"
-    font-weight="bold">
+<typewriter-effect
+  phrases='["Custom text!", "Any color!", "Any size!"]'
+  font-size="2rem"
+  color="#e74c3c"
+  font-family="Courier New, monospace"
+  font-weight="bold"
+>
 </typewriter-effect>
 ```
 
 ### Inline Usage
 
 ```html
-<p>This is text with <typewriter-effect phrases='["inline typing"]' style="display: inline;"></typewriter-effect> in it.</p>
+<p>
+  This is text with
+  <typewriter-effect
+    phrases='["inline typing"]'
+    style="display: inline;"
+  ></typewriter-effect>
+  in it.
+</p>
 ```
 
 ## Styling
@@ -53,9 +100,10 @@ Include the component in your html head section directly from the CDN:
 The component provides attributes for text styling (font, color, size, weight). For layout and positioning styles, use the `style` attribute on the component:
 
 ```html
-<typewriter-effect 
-    phrases='["Centered text!", "With custom spacing!"]'
-    style="display: block; text-align: center; margin: 20px 0; padding: 10px;">
+<typewriter-effect
+  phrases='["Centered text!", "With custom spacing!"]'
+  style="display: block; text-align: center; margin: 20px 0; padding: 10px;"
+>
 </typewriter-effect>
 ```
 
@@ -67,70 +115,85 @@ To use Google Fonts, import them in your HTML head section and reference them in
 
 ```html
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-    <typewriter-effect 
-        phrases='["Using Google Fonts!", "Special Elite font!", "Very stylish!"]'
-        font-family='"Special Elite", serif'>
-    </typewriter-effect>
+  <typewriter-effect
+    phrases='["Using Google Fonts!", "Special Elite font!", "Very stylish!"]'
+    font-family='"Special Elite", serif'
+  >
+  </typewriter-effect>
 </body>
 ```
 
 ## Attributes
 
-| Attribute | Description | Default | Example |
-|-----------|-------------|---------|---------|
-| `phrases` | JSON array of phrases to display | `["Hello World!"]` | `'["Text 1", "Text 2"]'` |
-| `font-size` | CSS font size | `3rem` | `2rem`, `24px`, `1.5em` |
-| `color` | Text color | `#333333` | `#ff0000`, `blue`, `rgb(255,0,0)` |
-| `font-family` | Font family | `"Courier New", monospace` | `Arial, sans-serif`, `"Special Elite", serif` |
-| `font-weight` | Font weight | `normal` | `bold`, `light`, `400` |
-| `cursor-color` | Cursor color | Same as text color | `#ff0000`, `blue` |
+| Attribute      | Description                      | Default                    | Example                                       |
+| -------------- | -------------------------------- | -------------------------- | --------------------------------------------- |
+| `phrases`      | JSON array of phrases to display | `["Hello World!"]`         | `'["Text 1", "Text 2"]'`                      |
+| `font-size`    | CSS font size                    | `3rem`                     | `2rem`, `24px`, `1.5em`                       |
+| `color`        | Text color                       | `#333333`                  | `#ff0000`, `blue`, `rgb(255,0,0)`             |
+| `font-family`  | Font family                      | `"Courier New", monospace` | `Arial, sans-serif`, `"Special Elite", serif` |
+| `font-weight`  | Font weight                      | `normal`                   | `bold`, `light`, `400`                        |
+| `cursor-color` | Cursor color                     | Same as text color         | `#ff0000`, `blue`                             |
 
 ## Examples
 
 ### Default Typewriter
+
 ```html
-<typewriter-effect phrases='["Hello World!", "Welcome to my site!", "This is awesome!"]'></typewriter-effect>
+<typewriter-effect
+  phrases='["Hello World!", "Welcome to my site!", "This is awesome!"]'
+></typewriter-effect>
 ```
 
 ### Large Red Text
+
 ```html
-<typewriter-effect 
-    phrases='["Big red text!", "Very noticeable!", "Hard to miss!"]'
-    font-size="4rem"
-    color="#e53e3e">
+<typewriter-effect
+  phrases='["Big red text!", "Very noticeable!", "Hard to miss!"]'
+  font-size="4rem"
+  color="#e53e3e"
+>
 </typewriter-effect>
 ```
 
 ### Bold Dark Text
+
 ```html
-<typewriter-effect 
-    phrases='["Code style text", "Perfect for tech sites", "Developer approved"]'
-    color="#2d3748"
-    font-weight="bold">
+<typewriter-effect
+  phrases='["Code style text", "Perfect for tech sites", "Developer approved"]'
+  color="#2d3748"
+  font-weight="bold"
+>
 </typewriter-effect>
 ```
 
 ### Google Font Style
+
 ```html
-<typewriter-effect 
-    phrases='["Special Elite font", "Classic typewriter feel", "Very authentic"]'
-    font-family='"Special Elite", serif'
-    color="#4a4a4a">
+<typewriter-effect
+  phrases='["Special Elite font", "Classic typewriter feel", "Very authentic"]'
+  font-family='"Special Elite", serif'
+  color="#4a4a4a"
+>
 </typewriter-effect>
 ```
 
 ### Small Subtitle
+
 ```html
-<typewriter-effect 
-    phrases='["Small subtitle", "Elegant and subtle", "Perfect for captions"]'
-    font-size="1.2rem"
-    color="#666666"
-    font-weight="light">
+<typewriter-effect
+  phrases='["Small subtitle", "Elegant and subtle", "Perfect for captions"]'
+  font-size="1.2rem"
+  color="#666666"
+  font-weight="light"
+>
 </typewriter-effect>
 ```
 
@@ -144,6 +207,7 @@ To use Google Fonts, import them in your HTML head section and reference them in
 ## Browser Support
 
 Works in all modern browsers that support:
+
 - Custom Elements (Web Components)
 - Shadow DOM
 - ES6 Classes
@@ -157,6 +221,7 @@ Works in all modern browsers that support:
 - Component is fully self-contained and won't conflict with existing styles
 
 ## License
-[LICENSE](LICENSE)  
+
+[LICENSE](LICENSE)
 
 Copyright (c) 2025 DevManSam
