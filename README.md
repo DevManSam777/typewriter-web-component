@@ -218,7 +218,7 @@ Works in all modern browsers that support:
 - Default font is Courier New for a classic typewriter feel
 - Import Google Fonts in your HTML head to use custom fonts with the `font-family` attribute
 - Phrases should be valid JSON array format
-- Component is fully self-contained and won't conflict with existing styles
+- Size: 12.7kB
 
 ## License
 
